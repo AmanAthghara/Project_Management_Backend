@@ -4,7 +4,7 @@ const { pool, query } = require("../config/db");
 
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 // Create join request
 router.post("/projects/:id/request-join", async (req, res) => {

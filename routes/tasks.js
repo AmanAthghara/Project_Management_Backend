@@ -4,7 +4,7 @@ const { pool, query } = require("../config/db");
 
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 const getProjectMembership = async (projectId, userId) => {
   const result = await query(

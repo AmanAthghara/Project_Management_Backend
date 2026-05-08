@@ -4,7 +4,7 @@ const { pool, query } = require("../config/db");
 
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 const getTask = async (taskId) => {
   const result = await query(

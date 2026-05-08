@@ -4,7 +4,7 @@ const { query } = require("../config/db");
 
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 router.get("/users/me/notifications", async (req, res) => {
   const userId = req.user.id;

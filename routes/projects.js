@@ -10,7 +10,7 @@ const {
 
 
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 // Create a project
 router.post("/", verifyToken , async (req, res) => {
