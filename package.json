@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "migrate": "psql $DATABASE_URL -f migrations/001_init.sql"
+    "migrate": "node scripts/migrate.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
