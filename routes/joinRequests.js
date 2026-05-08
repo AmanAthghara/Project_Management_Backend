@@ -66,7 +66,7 @@ router.post("/projects/:id/request-join", async (req, res) => {
 });
 
 // Get pending join requests (admin only)
-router.get("/projects/:id/join-requests", async (req, res) => {
+router.get("/projects/:id/join-requests", verifyToken , async (req, res) => {
   const projectId = req.params.id;
   const userId = req.user.id;
 
@@ -118,7 +118,7 @@ router.get("/projects/:id/join-requests", async (req, res) => {
 });
 
 // Approve or reject join request (admin only)
-router.patch("/projects/:id/join-requests/:requestId", async (req, res) => {
+router.patch("/projects/:id/join-requests/:requestId",verifyToken , async (req, res) => {
   const projectId = req.params.id;
   const requestId = req.params.requestId;
   const adminId = req.user.id;
@@ -217,7 +217,7 @@ router.patch("/projects/:id/join-requests/:requestId", async (req, res) => {
 });
 
 // Get current user's join requests
-router.get("/users/me/join-requests", async (req, res) => {
+router.get("/users/me/join-requests", verifyToken ,async (req, res) => {
   const userId = req.user.id;
 
   try {

@@ -6,7 +6,7 @@ const router = express.Router();
 
 // router.use(verifyToken);
 
-router.get("/users/me/notifications", async (req, res) => {
+router.get("/users/me/notifications", verifyToken ,async (req, res) => {
   const userId = req.user.id;
 
   try {
