@@ -10,7 +10,7 @@ const pool = new Pool({
 
 const migrations = [
   "../migrations/001_init.sql",
-  "../migrations/002_init.sql",
+  "../migrations/002_member_assignment_request.sql",
 ];
 
 const runMigrations = async () => {
