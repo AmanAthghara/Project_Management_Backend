@@ -13,13 +13,16 @@ const joinRequestsRoutes = require("./routes/joinRequests");
 const { errorHandler } = require("./middleware/errorHandler");
 
 const app = express();
+// const app = express();
+
+app.set('trust proxy', 1); // ✅ add this
 
 // Security headers
 app.use(helmet());
 
 // CORS
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL || true,
   credentials: true,
 }));
 
