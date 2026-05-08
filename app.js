@@ -21,10 +21,7 @@ app.set('trust proxy', 1);
 app.use(helmet());
 
 // CORS
-app.use(cors({
-  origin: process.env.CLIENT_URL || true,
-  credentials: true,
-}));
+app.use(cors());
 
 // Request logging (dev only)
 if (process.env.NODE_ENV === "development") {
