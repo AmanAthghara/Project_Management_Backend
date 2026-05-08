@@ -44,10 +44,10 @@ const authLimiter = rateLimit({
 // Routes
 app.use("/api/auth", authLimiter, authRoutes);
 app.use("/api/projects", projectsRoutes);
-app.use("/api/tasks", tasksRoutes);
-app.use("/api/assignments", taskAssignmentsRoutes);
-app.use("/api/notifications", notificationsRoutes);
-app.use("/api/join-requests", joinRequestsRoutes);
+app.use("/api", tasksRoutes);
+app.use("/api", taskAssignmentsRoutes);
+app.use("/api", notificationsRoutes);   // was "/api/notifications"
+app.use("/api", joinRequestsRoutes);    // was "/api/join-requests"
 
 app.get("/", (req, res) => {
   res.json({ message: "API running" });
