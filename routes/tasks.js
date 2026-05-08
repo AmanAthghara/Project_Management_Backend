@@ -70,8 +70,8 @@ const enrichTaskRows = async (tasks) => {
 // POST /api/projects/:id/tasks
 // Admin only
 router.post("/projects/:id/tasks", verifyToken, async (req, res) => {
-  console.log(req.body);
-  console.log(req.user);
+  // console.log(req.body);
+  // console.log(req.user);
   const projectId = req.params.id;
   const userId = req.user.id;
   const { title, description } = req.body;
